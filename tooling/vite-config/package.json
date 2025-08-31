@@ -2,6 +2,7 @@
   "name": "@solid-foundation/vite-config",
   "private": true,
   "main": "./index.js",
+  "types": "./index.d.ts",
   "type": "module",
   "dependencies": {
     "vite": "^7.1.3",

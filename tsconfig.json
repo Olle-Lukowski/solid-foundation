@@ -9,6 +9,14 @@
     "jsxImportSource": "solid-js",
     "types": ["vite/client", "@testing-library/jest-dom"],
     "noEmit": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true
   }
 }

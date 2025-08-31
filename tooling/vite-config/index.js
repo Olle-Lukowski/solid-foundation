@@ -13,6 +13,7 @@ export function createLibConfig(globalName, options = {}) {
       dts({
         insertTypesEntry: true,
         rollupTypes: true,
+        exclude: ['../../apps/**/*'],
       }),
     ],
     build: {
