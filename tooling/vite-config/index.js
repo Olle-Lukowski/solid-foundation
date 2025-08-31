@@ -2,9 +2,10 @@ import { defineConfig } from 'vite'
 import solid from 'vite-plugin-solid'
 import dts from 'vite-plugin-dts'
 import { resolve } from 'path'
+import { cwd } from 'process'
 
 export function createLibConfig(globalName, options = {}) {
-  const { bundleInternalDeps = false, entry = 'src/index.ts' } = options
+  const { bundleInternalDeps = false, entry = 'src/index.ts', dirname = cwd() } = options
 
   return defineConfig({
     plugins: [
@@ -16,7 +17,7 @@ export function createLibConfig(globalName, options = {}) {
     ],
     build: {
       lib: {
-        entry: resolve(process.cwd(), entry),
+        entry: resolve(dirname, entry),
         name: globalName,
         fileName: 'index',
         formats: ['es', 'cjs'],
