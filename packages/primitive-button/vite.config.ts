@@ -12,7 +12,7 @@ export default defineConfig({
     dts({
       insertTypesEntry: true,
       rollupTypes: true,
-      exclude: ['../../apps/**/*'],
+      include: ['src/**/*.ts', 'src/**/*.tsx'],
     }),
   ],
   build: {
