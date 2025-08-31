@@ -1,0 +1,19 @@
+{
+  "name": "@solid-foundation/playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@solid-foundation/primitives": "workspace:*",
+    "solid-js": "^1.9.9"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3",
+    "vite-plugin-solid": "^2.11.8"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "@solid-foundation/primitives",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "A collection of primitives for Solid Foundation - reusable UI primitives built with SolidJS",
+  "author": "Olle Lukowski <olle@lukowski.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Olle-Lukowski/solid-foundation.git",
+    "directory": "packages/primitives"
+  },
+  "homepage": "https://github.com/Olle-Lukowski/solid-foundation/tree/main/packages/primitives",
+  "bugs": {
+    "url": "https://github.com/Olle-Lukowski/solid-foundation/issues"
+  },
+  "keywords": [
+    "solidjs",
+    "primitives",
+    "ui",
+    "components",
+    "collection",
+    "reusable"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@solid-foundation/primitive-button": "workspace:*"
+  },
+  "devDependencies": {
+    "solid-js": "^1.9.9",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3",
+    "@solid-foundation/vite-config": "workspace:*"
+  }
+}

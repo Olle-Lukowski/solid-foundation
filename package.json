@@ -1,0 +1,42 @@
+{
+  "name": "@solid-foundation/monorepo",
+  "private": true,
+  "type": "module",
+  "description": "A monorepo for Solid Foundation - a collection of packages that provide a solid foundation for building web applications using SolidJS",
+  "author": "Olle Lukowski <olle@lukowski.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Olle-Lukowski/solid-foundation.git"
+  },
+  "homepage": "https://github.com/Olle-Lukowski/solid-foundation",
+  "bugs": {
+    "url": "https://github.com/Olle-Lukowski/solid-foundation/issues"
+  },
+  "keywords": [
+    "solidjs",
+    "ui",
+    "components",
+    "primitives",
+    "monorepo"
+  ],
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm -r dev",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "test:ui": "pnpm -r test:ui",
+    "test:run": "pnpm -r test:run",
+    "test:coverage": "pnpm -r test:coverage",
+    "typecheck": "pnpm -r typecheck",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.6",
+    "@testing-library/jest-dom": "^6.8.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.3"
+  }
+}

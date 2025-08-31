@@ -1,0 +1,12 @@
+{
+  "name": "@solid-foundation/vite-config",
+  "private": true,
+  "main": "./index.js",
+  "type": "module",
+  "dependencies": {
+    "vite": "^7.1.3",
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-solid": "^2.11.8",
+    "@testing-library/jest-dom": "^6.8.0"
+  }
+}
