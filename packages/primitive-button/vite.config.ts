@@ -1,7 +1,47 @@
-import { createLibConfig } from '@solid-foundation/vite-config'
-import { dirname } from 'path'
+import { defineConfig } from 'vite'
+import solid from 'vite-plugin-solid'
+import dts from 'vite-plugin-dts'
+import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
-export default createLibConfig('SolidFoundationButton', { entry: 'src/index.tsx', dirname: __dirname })
+export default defineConfig({
+  plugins: [
+    solid(),
+    dts({
+      insertTypesEntry: true,
+      rollupTypes: true,
+      exclude: ['../../apps/**/*'],
+    }),
+  ],
+  build: {
+    lib: {
+      entry: resolve(__dirname, 'src/index.tsx'),
+      name: 'SolidFoundationButton',
+      fileName: 'index',
+      formats: ['es', 'cjs'],
+    },
+    rollupOptions: {
+      external: ['solid-js', 'solid-js/web', /^@solid-foundation\/.*/],
+      output: {
+        globals: {
+          'solid-js': 'SolidJS',
+          'solid-js/web': 'SolidJSWeb',
+        },
+      },
+    },
+    emptyOutDir: true,
+    sourcemap: true,
+    minify: false,
+  },
+  esbuild: {
+    drop: process.env.NODE_ENV === 'production' ? ['console', 'debugger'] : [],
+  },
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['node_modules/@testing-library/jest-dom/vitest'],
+    globals: false,
+    isolate: false,
+  },
+})

@@ -45,6 +45,7 @@
     "solid-js": "^1.9.9",
     "typescript": "^5.9.2",
     "vite": "^7.1.3",
-    "@solid-foundation/vite-config": "workspace:*"
+    "vite-plugin-dts": "^4.5.4",
+    "vite-plugin-solid": "^2.11.8"
   }
 }
