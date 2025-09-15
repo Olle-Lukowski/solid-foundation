@@ -1,12 +1,6 @@
 import { JSX, splitProps } from 'solid-js'
-import { mergeProps, Dynamic } from 'solid-js/web'
 
 export interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement> {
-  /**
-   * The element or component to render as. Defaults to "button"
-   */
-  as?: keyof JSX.IntrinsicElements | ((props: any) => JSX.Element)
-
   /**
    * Whether the button is disabled
    */
@@ -38,41 +32,29 @@ export interface ButtonProps extends JSX.ButtonHTMLAttributes<HTMLButtonElement>
  * A very simple wrapper around a native HTML `button` element, with some extra props for convenience and consistent accessibility.
  */
 export function Button(props: ButtonProps) {
-  const merged = mergeProps(
-    {
-      as: 'button' as const,
-      type: 'button' as const,
-      variant: 'primary' as const,
-      size: 'md' as const,
-      loadingText: 'Loading...',
-    },
-    props,
-  )
+  const [local, others] = splitProps(props, ['disabled', 'loading', 'loadingText', 'variant', 'size', 'children'])
+  const {
+    disabled = false,
+    loading = false,
+    loadingText = 'Loading...',
+    variant = 'primary',
+    size = 'md',
+    children,
+  } = local
 
-  const [local, others] = splitProps(merged, [
-    'as',
-    'disabled',
-    'loading',
-    'loadingText',
-    'variant',
-    'size',
-    'children',
-  ])
-
-  const isDisabled = () => local.disabled || local.loading
+  const isDisabled = () => disabled || loading
 
   return (
-    <Dynamic
-      component={local.as}
+    <button
       disabled={isDisabled()}
       aria-disabled={isDisabled()}
-      aria-busy={local.loading}
-      data-variant={local.variant}
-      data-size={local.size}
-      data-loading={local.loading}
+      aria-busy={loading}
+      data-variant={variant}
+      data-size={size}
+      data-loading={loading}
       {...others}
     >
-      {local.loading ? local.loadingText : local.children}
-    </Dynamic>
+      {loading ? loadingText : children}
+    </button>
   )
 }
