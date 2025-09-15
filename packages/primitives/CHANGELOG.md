@@ -1,5 +1,12 @@
 # @solid-foundation/primitives
 
+## 0.1.1
+
+### Patch Changes
+
+- Updated dependencies [4cff871]
+  - @solid-foundation/primitive-button@0.2.0
+
 ## 0.1.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
   "name": "@solid-foundation/primitive-button",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "description": "A primitive button component for Solid Foundation - a simple wrapper around native HTML button with accessibility features",
   "author": "Olle Lukowski <olle@lukowski.dev>",
