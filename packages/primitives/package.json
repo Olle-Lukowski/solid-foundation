@@ -1,6 +1,6 @@
 {
   "name": "@solid-foundation/primitives",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "A collection of primitives for Solid Foundation - reusable UI primitives built with SolidJS",
   "author": "Olle Lukowski <olle@lukowski.dev>",
